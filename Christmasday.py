@@ -2,36 +2,36 @@ import streamlit as st
 from datetime import date, timedelta
 
 # ---------- CONFIG ----------
-st.set_page_config(...)
-# ---------- PASSWORD PROTECTION ----------
-PASSWORD = "7 janmo ke ache karam milake bhi i dont deserve you"  # change to something meaningful
-
-st.markdown("### 🔒 Private Space")
-password_input = st.text_input(
-    "Enter password jaanu",
-    type="password"
-)
-
-if password_input != PASSWORD:
-    st.caption("Hint: our polaroid")
-    st.stop()
-if password_input:
-    if password_input != PASSWORD:
-        st.error("NOPE, Think, something i wrote on it maybe?")
-        st.stop()
-
-
-    page_title="My attempt to make this christmas a little more special <3",
+st.set_page_config(
+    page_title="My attempt to make this Christmas a little more special <3",
     page_icon="🎄",
     layout="centered"
 )
 
+# ---------- PASSWORD PROTECTION ----------
+PASSWORD = "7 janmo ke ache karam milake bhi i dont deserve you"
+
+st.markdown("### 🔒 Private Space")
+password_input = st.text_input(
+    "Enter password jaanu ❤️",
+    type="password"
+)
+
+if password_input != PASSWORD:
+    if password_input:
+        st.error("NOPE 😛 Think… something I wrote on it maybe?")
+    else:
+        st.caption("Hint: our polaroid 📸")
+    st.stop()
+
+# ---------- DATES ----------
 START_DATE = date(2025, 12, 14)  # CHANGE if needed
 TODAY = date.today()
 
+# ---------- MESSAGES ----------
 messages = [
-    "❤️ **Day 1**\n\nHi Jaan, Im so grateful for you for being so sweet and making me that awesome amazing gift you did yesterday. I wanted to show you how much i appreciated you so i made this little thing. Everyday i wake up i feel grateful to have you in my life. youre my first thought in the morning and my last before i sleep jaan. Youre my favourite person my little sunflower. muahhhhhh",
-    "❤️ **Day 2**\n\nHi cutu, Today I wanted to tell you how Watching you sleep everyday makes me feel like the luckiest person alive. Im so grateful to have the privelege of seeing my beautiful princess drift off to dream world everynight. and everynight it feels the same - like someone melted my heart in a microwave.",
+    "❤️ **Day 1**\n\nHi Jaan, Im so grateful for you for being so sweet and making me that awesome amazing gift you did yesterday. I wanted to show you how much i appreciated you so i made this little thing. Everyday i wake up i feel grateful to have you in my life. youre my first thought in the morning and my last before i sleep jaan. Youre my favourite person my little sunflower. muahhhhhh",,
+    "❤️ **Day 2**\n\nHi cutu, Today I wanted to tell you how Watching you sleep everyday makes me feel like the luckiest person alive. Im so grateful to have the privelege of seeing my beautiful princess drift off to dream world everynight. and everynight it feels the same - like someone melted my heart in a microwave.",,
     "❤️ **Day 3**\n\nHi baby, Today I wanted to tell you how GODAMN HOLY FUCKING GORGEOUS YOU AREE!!!! Like damn, baba sometimes i wonder ki mai hi pichle janam me mother teressa tha kya because theres absolutely no way in hell i ended up with someone as ABSOMINDFUCKINGLY angelic as you without divine intervention. Even if looking at you went I went to hell, i would stare at you with my whole soul and brag to the devil about being in heaven.",
     "❤️ **Day 4**\n\nHiiiiiiii my little cupcake, Today i wanted to tell you how the only thing i want for christmas, is youuuuuuuuuuuu. ever since you came in my life jaan, ive become a better person in all aspects of my life. i couldnt ask for anything more, because you are my everything, my love.",
     "❤️ **Day 5**\n\nHello madam ji, aaj maine socha aapko batau that i really really really admire how hardworking and dedicated you are in every little thing you do my love. everyday that i spend with you i get motivated to do more, and your passion and drive is genuinely so inspiring. i want you to know that even if no one believes in you, im right here standing by you jaan.",
@@ -45,14 +45,12 @@ messages = [
 
 # ---------- UI ----------
 st.title("🎄 11 Days of Us")
-st.subheader("Somethings i wanna tell you everyday")
+st.subheader("Somethings I wanna tell you everyday")
 
-# ❄️ SNOWFALL EFFECT (ADD HERE)
+# ❄️ Snowfall
 st.snow()
 
 st.write("Open **one gift per day** until Christmas.")
-
-
 st.divider()
 
 # ---------- CALENDAR ----------
@@ -66,6 +64,4 @@ for i in range(11):
         st.button(f"🔒 Day {i+1}", disabled=True)
 
 st.divider()
-
-# ---------- FOOTER ----------
 st.caption("Made with ❤️ just for you.")
